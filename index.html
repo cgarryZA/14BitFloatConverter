@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.png">
+    <meta charset="iso-8859-1">
+    <title>16 Bit Float Calculator</title>
+    <style>
+     * { font-family: Verdana, Geneva, sans-serif; font-size: small; }
+     table, th, td { border: 0px; padding: 0px; border-spacing: 0px }
+     p.info { margin-left: auto; margin-right: auto; max-width: 800px; text-align: justify }
+     code { font-family: monospace }
+    </style>
+    <script src="convert.js"></script>
+  </head>
+  <body>
+    <center><h3 style="font-size: large; margin-bottom: 3px">16 Bit Float Calculator</h3>
+    <div style="height: 3em"></div>
+    <center>
+      <table><tr>
+        <th colspan=2></th>
+        <th colspan=3 style="text-align:center">Sign</th>
+        <th colspan=3>Significand</th>
+        <th></th>
+        <th>Exponent</th>
+      </tr><tr>
+        <td colspan=10 style="height:1.3em"></td>
+      </tr><tr>
+        <td><input id="in1" style="text-align:right" size="30" style="font-family: monospace" type="text" value="0.0"></td>
+        <td style="width:4em">&nbsp;</td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="sign1" maxlength="1" size="1" style="font-family: monospace" type="text" value="0"></td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="hidden1" disabled maxlength="1" size="1" style="font-family: monospace; color: red" type="text" value="0"></td>
+        <td>.</td>
+        <td><input id="mantissa1" maxlength="7" size="7" style="font-family: monospace" type="text" value="0000000"></td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="exp1" maxlength="7" size="7" style="font-family: monospace" type="text" value="0000000"></td>
+      </tr><tr>
+        <td colspan=3></td>
+        <td id="signOut1" style="color:blue; text-align:center; font-weight:bold; font-family:monospace">+</td>
+        <td style="width:2em">&nbsp;</td>
+        <td id="mantissaOut1" colspan=3 style="color:blue; text-align:center; font-weight:bold; font-family:monospace">0.0</td>
+        <td style="width:2em">&nbsp;</td>
+        <td id="expOut1" style="color:blue; text-align:center; font-weight:bold; font-family:monospace">0</td>
+      </tr><tr>
+        <td colspan=10 style="height:0.3em"></td>
+      </tr><tr>
+        <td colspan=10 style="height:3.5em"></td>
+      </tr><tr>
+        <td><input id="in2" style="text-align:right" size="30" style="font-family: monospace" type="text" value="0.0"></td>
+        <td style="width:4em">&nbsp;</td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="sign2" maxlength="1" size="1" style="font-family: monospace" type="text" value="0"></td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="hidden2" disabled maxlength="1" size="1" style="font-family: monospace; color: red" type="text" value="0"></td>
+        <td>.</td>
+        <td><input id="mantissa2" maxlength="7" size="7" style="font-family: monospace" type="text" value="0000000"></td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="exp2" maxlength="7" size="7" style="font-family: monospace" type="text" value="0000000"></td>
+      </tr><tr>
+        <td colspan=3></td>
+        <td id="signOut2" style="color:blue; text-align:center; font-weight:bold; font-family:monospace">+</td>
+        <td style="width:2em">&nbsp;</td>
+        <td id="mantissaOut2" colspan=3 style="color:blue; text-align:center; font-weight:bold; font-family:monospace">0.0</td>
+        <td style="width:2em">&nbsp;</td>
+        <td id="expOut2" style="color:blue; text-align:center; font-weight:bold; font-family:monospace">0</td>
+      </tr><tr>
+        <td colspan=10 style="height:0.3em"></td>
+      </tr><tr>
+        <td colspan=10 style="height:2em"></td>
+      </tr><tr>
+        <td colspan=10 style="text-align: center">
+          <button id="plusButton" type="button" style="font-family: monospace; font-size: large">+</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button id="minusButton" type="button" style="font-family: monospace; font-size: large">-</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button id="timesButton" type="button" style="font-family: monospace; font-size: large">&times;</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button id="divButton" type="button" style="font-family: monospace; font-size: large">/</button>
+        </td>
+      </tr><tr>
+        <td colspan=10 style="height:5em"></td>
+      </tr><tr>
+        <td><input id="in3" style="text-align:right" size="30" style="font-family: monospace" type="text" value="0.0"></td>
+        <td style="width:4em">&nbsp;</td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="sign3" maxlength="1" size="1" style="font-family: monospace" type="text" value="0"></td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="hidden3" disabled maxlength="1" size="1" style="font-family: monospace; color: red" type="text" value="0"></td>
+        <td>.</td>
+        <td><input id="mantissa3" maxlength="7" size="7" style="font-family: monospace" type="text" value="0000000"></td>
+        <td style="width:2em">&nbsp;</td>
+        <td><input id="exp3" maxlength="7" size="7" style="font-family: monospace" type="text" value="0000000"></td>
+      </tr><tr>
+        <td colspan=3></td>
+        <td id="signOut3" style="color:blue; text-align:center; font-weight:bold; font-family:monospace">+</td>
+        <td style="width:2em">&nbsp;</td>
+        <td id="mantissaOut3" colspan=3 style="color:blue; text-align:center; font-weight:bold; font-family:monospace">0.0</td>
+        <td style="width:2em">&nbsp;</td>
+        <td id="expOut3" style="color:blue; text-align:center; font-weight:bold; font-family:monospace">0</td>
+      </tr><tr>
+        <td colspan=10 style="height:0.3em"></td>
+      </tr><tr>
+      </tr></table>
+  </body>
+</html>
